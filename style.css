@@ -1,0 +1,442 @@
+@import url('https://fonts.googleapis.com/css2?family=Hubballi&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ibarra+Real+Nova:wght@400;500;600;700&display=swap');
+
+
+
+
+
+:root {
+    --index: calc(1vw + 1vh);
+    --transition: .75s cubic-bezier(.075, .5, 0, 1);
+    --side-small: 26;
+    --side-big: 40;
+}
+  ::-webkit-scrollbar{
+    width: 14px;
+    background-color: rgb(236, 233, 233);
+  }
+  ::-webkit-scrollbar-track{
+    border:  2.5px solid rgb(255, 255, 255);
+    box-shadow: inset 2px 2px 2px rgb(255, 255, 255, .25);
+  }
+  ::-webkit-scrollbar-button:hover{
+    color: aqua;
+    width: 20px;
+    height: 20px;
+  }
+  ::-webkit-scrollbar-thumb{
+    background:radial-gradient(rgb(255, 192, 237) , rgb(247, 162, 253));
+    border-radius: 25px;
+    width: 20px;
+    box-shadow: inset 2px 2px 14px rgba(225, 83, 83, 0.733);
+  }
+
+
+
+
+
+html{
+    scroll-behavior: smooth;
+}
+body{
+    min-height: 100vh;
+    width: 100vw;
+    background-color: #E3D6FF !important;
+}
+
+
+
+
+
+
+
+
+
+
+/*sidebar*/
+
+img{
+    cursor: pointer;
+}
+.flex-div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*===========================================  NAVBAR  =================================*/
+nav{
+    justify-content: space-between;
+    padding: 27px 1.5%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background: linear-gradient(90.25deg, #F6D0FF 4.29%, #FDE2FF 43.69%, #F2BEFF 88.11%);
+    box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.29);
+    z-index: 999999999;
+}
+
+/*oshilib-yopi;adigan button*/
+nav .nav-left{
+    font-weight: 600;
+    font-size: 32px;
+    transition: .7s;
+}
+
+
+/*navbarning ung tomoni*/
+.nav-right .user-logo{
+    width: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: .4s;
+}
+.nav-right .user-logo:hover{
+    background-color: #ccc;
+    border: 2px solid var(--clr-neon);
+}
+.nav-right ul li{
+    list-style: none;
+    padding: 10px 0 10px 20px;
+    cursor: pointer;
+    width: 100%;
+    margin: 0;
+    display: flex;
+    transition: .4s;
+}
+.nav-right ul li:hover{
+    background: #e6b3f8ee;
+}
+.nav-right ul li i{
+    color: var(--clr-neon);
+}
+.nav-right ul.active{
+    display: block;
+}
+.nav-right ul{
+    display: none;
+    width: 200px;
+    height: 400px;
+    position: absolute;
+    padding-left: 0;
+    right: 25px;
+    top: 50px;
+    padding-top: 15px;
+    background-color: rgb(236, 212, 246);
+    border-radius: 15px;
+    -webkit-box-shadow: 0px 5px 25px 2px rgba(34, 60, 80, 0.21);
+-moz-box-shadow: 0px 5px 25px 2px rgba(34, 60, 80, 0.21);
+box-shadow: 0px 5px 25px 2px rgba(34, 60, 80, 0.21);
+    clip-path: polygon(80% 0, 87% 3%, 100% 3%, 100% 56%, 100% 100%, 51% 100%, 0 100%, 0 57%, 0 3%, 73% 3%);
+}
+
+
+
+/*logotip*/
+nav .nav-center .nav-logo p{
+    color: rgb(0, 0, 0);
+    letter-spacing: 0.1em;
+    font-family: 'Hubballi';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 70%;
+    margin: 0;
+}
+
+nav .nav-center .nav-logo p span{
+    color: #4B0BFF;
+}
+
+
+
+
+
+/*===========================================  SIDEBAR  =================================*/
+
+/*sidebar ochilganda*/
+.nav.active{
+    left: -30%;
+}
+
+
+
+.nav i.active::before{
+    content: '\f00d';
+}
+  .nav{
+    position: fixed;
+    left: 0%;
+    transition: .4s;
+    display: block;
+  }
+  .nav ul{
+    list-style-type:none;
+    margin:0;
+    padding:0 0 150px 0;
+    width:30%;
+    background: #ECC4FB;
+    box-shadow: 2px 0px 8px rgba(128, 0, 255, 0.23);
+    position:fixed;
+    height:100%;/*to achieve full height*/
+    overflow:auto;/*to achieve scrolling effect if it has lot of content in nav*/
+  }
+  
+  .nav ul li a{
+    display:block;
+    background: #FFFFFF;
+    color: #000;
+    padding: 22px 0 22px 7%;
+    text-decoration:none;
+    font-family: 'Ibarra Real Nova';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: 0.1em;
+  }
+
+  .nav ul h4{
+    font-family: 'Ibarra Real Nova';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 100%;
+    margin: 13px 0 13px 5%;
+    line-height: 30px;
+}
+
+  
+  .nav ul li{
+    margin-bottom: 4px;
+    -width:calc(100%/4);
+    -width:25%;
+  box-sizing:border-box;
+  list-style:disc;
+  }
+  .nav ul li a.active{
+    background-color:pink;
+    color:red;
+  }
+  
+  .nav ul li a:hover:not(.active){
+    background-color:rgb(255, 166, 166);
+    color:yellow;
+  }
+
+
+
+
+
+/*===================================  FULLPAGE  =========================================*/
+
+
+/*sidebar ochilganda*/
+.fullpage{
+    position: relative;
+    margin-left: 32vw;
+    transition: .4s;
+}
+/*sidebar yopilganda*/
+.fullpage.active{
+    margin-left: 2vw;
+}
+
+
+
+
+
+
+
+/*===================================  NEXT_BUTTON  =========================================*/
+
+.next{
+    position: absolute;
+    right: 27px;
+    bottom: 27px;
+    width: 172px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: 0;
+    border: 1px solid rgb(204, 0, 255);
+    background: linear-gradient(104.82deg, #C242FF 19.77%, #DF1CFF 81.27%);
+    border-radius: 11px;
+    letter-spacing: -0.04em;
+    transition: .7s;
+    z-index: -1;
+}
+.next a{
+    color: #fff;
+    font-family: 'Hind Vadodara';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 101.5%;
+    transition: .7s;
+}
+.next:hover a{
+    color: rgb(204, 0, 255);
+}
+.next:hover{
+    background: transparent;
+    border: 1px solid rgb(204, 0, 255);
+}
+
+
+
+
+
+
+
+
+/*===================================  RESPONSIVE  =========================================*/
+@media(max-width: 1024px){
+    .nav ul{
+        z-index: 9999;
+        left: -50vw;
+        width: 40vw;
+        transition: .4s;
+    }
+    .nav ul.active{
+        left: 0vw;
+    }
+    .fullpage{
+        margin-left: 2vw;
+        z-index: -1;
+        transition: .4s;
+    }
+}
+@media(max-width: 800px){
+    .nav ul{
+        z-index: 9999;
+        left: -80vw;
+        width: 70vw;
+        transition: .4s;
+    }
+    .nav ul.active{
+        left: 0vw;
+    }
+    .fullpage{
+        margin-left: 2vw;
+        z-index: -1;
+        transition: .4s;
+    }
+}
+@media(max-width:576px){
+    nav .nav-left{
+        font-weight: 600;
+        font-size: 24px;
+    }
+    nav .nav-center .nav-logo p{
+        font-family: 'Hubballi';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 28px;
+        line-height: 100%;
+    }
+    .nav ul{
+        z-index: 9999;
+        left: -110vw;
+        width: 100vw;
+        transition: .4s;
+    }
+    .nav ul.active{
+        left: 0vw;
+    }
+    .nav ul li a{
+        text-align: center;
+    }
+    .fullpage{
+        margin-left: 2vw;
+        z-index: -1;
+        transition: .4s;
+    }
+    .next{
+        position: absolute;
+        right: 15px;
+        bottom: 15px;
+        width: 138px;
+        height: 44px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
